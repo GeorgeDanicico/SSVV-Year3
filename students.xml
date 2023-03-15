@@ -12,4 +12,8 @@
         <Nume>Robert Cojocariu</Nume>
         <Grupa>212</Grupa>
     </student>
+    <student ID="21">
+        <Nume>Robert Cojocariu</Nume>
+        <Grupa>212</Grupa>
+    </student>
 </Entitati>

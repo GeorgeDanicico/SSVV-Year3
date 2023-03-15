@@ -18,14 +18,13 @@ public class StudentTest {
 
     @Test
     public void tc_1_validStudentWithGroup() {
-        int response = service.saveStudent("21", "Robert Cojocariu", 212);
+        int response = service.saveStudent("22", "Robert Cojocariu", 212);
         assertEquals(1, response);
     }
 
     @Test
     public void tc_2_invalidStudentWithGroup() {
-        int response = 0;
-        response = service.saveStudent("18", "Robert Cojocariu", 1234);
+        int response = service.saveStudent("18", "Robert Cojocariu", 1234);
 
         assertEquals(1, response);
 
