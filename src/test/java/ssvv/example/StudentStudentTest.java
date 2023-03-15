@@ -23,7 +23,7 @@ public class StudentStudentTest {
     }
 
     @Test
-    public void tc_1_invalidStudentWithGroup() {
+    public void tc_2_invalidStudentWithGroup() {
         int response = 0;
         response = service.saveStudent("18", "Robert Cojocariu", 1234);
 
