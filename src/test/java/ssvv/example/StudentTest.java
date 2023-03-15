@@ -11,7 +11,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 
-public class StudentStudentTest {
+public class StudentTest {
     private Validator<Student> studentValidator = new StudentValidator();
     private StudentXMLRepository studentXMLRepository = new StudentXMLRepository(studentValidator, "students.xml");
     private Service service = new Service(studentXMLRepository, null, null);
