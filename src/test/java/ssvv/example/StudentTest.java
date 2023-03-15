@@ -18,7 +18,7 @@ public class StudentTest {
 
     @Test
     public void tc_1_validStudentWithGroup() {
-        int response = service.saveStudent("23", "Robert Cojocariu", 212);
+        int response = service.saveStudent("30", "Robert Cojocariu", 212);
         assertEquals(1, response);
     }
 
