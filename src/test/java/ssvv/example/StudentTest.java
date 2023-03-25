@@ -18,15 +18,14 @@ public class StudentTest {
 
     @Test
     public void tc_1_validStudentWithGroup() {
-        int response = service.saveStudent("30", "Robert Cojocariu", 212);
+        int response = service.saveStudent("30", "Robert Cojocariu", 937);
         assertEquals(0, response);
     }
 
     @Test
     public void tc_2_invalidStudentWithGroup() {
-        int response = service.saveStudent("18", "Robert Cojocariu", 1234);
+        int response = service.saveStudent("18", "Robert Cojocariu", 939);
         assertEquals(1, response);
-
     }
 
     @Test
@@ -64,4 +63,23 @@ public class StudentTest {
         int response = service.saveStudent("995", "", 932);
         assertEquals(1, response);
     }
+
+    @Test
+    public void tc_9_invalidStudentWithGroupMax() {
+        int response = service.saveStudent("10", "test9", 938);
+        assertEquals(1, response);
+    }
+
+    @Test
+    public void tc_10_invalidStudentWithGroupMin() {
+        int response = service.saveStudent("10", "test9", 110);
+        assertEquals(1, response);
+    }
+
+    @Test
+    public void tc_11_validStudentWithGroupMin() {
+        int response = service.saveStudent("10", "test9", 111);
+        assertEquals(0, response);
+    }
+
 }
