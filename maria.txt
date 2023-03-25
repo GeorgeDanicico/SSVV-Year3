@@ -1,6 +1,0 @@
-Tema: 2
-Nota: 1.0
-Predata in saptamana: 14
-Deadline: 8
-Feedback: done
-

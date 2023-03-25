@@ -8,14 +8,14 @@ import java.time.temporal.WeekFields;
 import java.util.Locale;
 
 public class Service {
-    private StudentXMLRepository studentXmlRepo;
-    private TemaXMLRepository temaXmlRepo;
-    private NotaXMLRepository notaXmlRepo;
+    private StudentRepository studentXmlRepo;
+    private TemaRepository temaXmlRepo;
+    private NotaRepository notaXmlRepo;
 
-    public Service(StudentXMLRepository studentXmlRepo, TemaXMLRepository temaXmlRepo, NotaXMLRepository notaXmlRepo) {
-        this.studentXmlRepo = studentXmlRepo;
-        this.temaXmlRepo = temaXmlRepo;
-        this.notaXmlRepo = notaXmlRepo;
+    public Service(StudentRepository studentRepo, TemaRepository temaRepo, NotaRepository notaRepo) {
+        this.studentXmlRepo = studentRepo;
+        this.temaXmlRepo = temaRepo;
+        this.notaXmlRepo = notaRepo;
     }
 
     public Iterable<Student> findAllStudents() { return studentXmlRepo.findAll(); }
@@ -129,6 +129,6 @@ public class Service {
     public void createStudentFile(String idStudent, String idTema) {
         Nota nota = notaXmlRepo.findOne(new Pair(idStudent, idTema));
 
-        notaXmlRepo.createFile(nota);
+//        notaXmlRepo.createFile(nota);
     }
 }
