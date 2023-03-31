@@ -46,7 +46,7 @@ public class TemaTest {
     }
 
     @Test
-    public void tc_5_validTemaRepo() {
+    public void tc_5_invalidTemaId() {
         Tema tema1 = new Tema("99", "test", 9, 7);
         temaRepository.save(tema1);
 
