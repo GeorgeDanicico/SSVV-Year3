@@ -30,4 +30,28 @@ public class TemaTest {
         int response = service.saveTema("99", "test", 20, 6);
         assertEquals(1, response);
     }
+
+    @Test
+    public void tc_3_validTemaRepo() {
+        Tema tema = new Tema("99", "test", 9, 7);
+        Tema response = temaRepository.save(tema);
+        assertEquals(tema, response);
+    }
+
+    @Test
+    public void tc_4_invalidTemaValidator() {
+        Tema tema = new Tema(null, "test", 9, 6);
+        Tema response = temaRepository.save(tema);
+        assertEquals(null, response);
+    }
+
+    @Test
+    public void tc_5_validTemaRepo() {
+        Tema tema1 = new Tema("99", "test", 9, 7);
+        temaRepository.save(tema1);
+
+        Tema tema2 = new Tema("99", "test2", 10, 6);
+        Tema response = temaRepository.save(tema2);
+        assertEquals(null, response);
+    }
 }
