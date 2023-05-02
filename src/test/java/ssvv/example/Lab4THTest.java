@@ -1,6 +1,11 @@
 package ssvv.example;
 
+import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
 import ssvv.example.src.domain.Nota;
 import ssvv.example.src.domain.Student;
 import ssvv.example.src.domain.Tema;
@@ -15,15 +20,27 @@ import ssvv.example.src.validation.Validator;
 
 import static org.junit.Assert.assertEquals;
 
+@RunWith(MockitoJUnitRunner.class)
 public class Lab4THTest {
-    private Validator<Student> studentValidator = new StudentValidator();
-    private StudentRepository studentRepository = new StudentRepository(studentValidator);
-    private Validator<Tema> temaValidator = new TemaValidator();
-    private TemaRepository temaRepository = new TemaRepository(temaValidator);
-    private Validator<Nota> notaValidator = new NotaValidator();
-    private NotaRepository notaRepository = new NotaRepository(notaValidator);
+    @Mock
+    private Validator<Student> studentValidator;
+    @Mock
+    private Validator<Tema> temaValidator;
+    @Mock
+    private Validator<Nota> notaValidator;
+    private Service service;
 
-    private Service service = new Service(studentRepository, temaRepository, notaRepository);
+    @InjectMocks
+    private StudentRepository studentRepositoryMock;
+    @InjectMocks
+    private TemaRepository temaRepositoryMock;
+    @InjectMocks
+    private NotaRepository notaRepositoryMock;
+
+    @Before
+    public void setUp() {
+        service =  new Service(studentRepositoryMock, temaRepositoryMock, notaRepositoryMock);
+    }
 
     @Test
     public void tc_1_incremental() {
