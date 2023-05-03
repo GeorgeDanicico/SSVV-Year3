@@ -12,13 +12,13 @@ public class Main {
         Validator<Tema> temaValidator = new TemaValidator();
         Validator<Nota> notaValidator = new NotaValidator();
 
-        StudentXMLRepository fileRepository1 = new StudentXMLRepository(studentValidator, "studenti.xml");
-        TemaXMLRepository fileRepository2 = new TemaXMLRepository(temaValidator, "teme.xml");
-        NotaXMLRepository fileRepository3 = new NotaXMLRepository(notaValidator, "note.xml");
+        StudentRepository fileRepository1 = new StudentRepository(studentValidator);
+        TemaRepository fileRepository2 = new TemaRepository(temaValidator);
+        NotaRepository fileRepository3 = new NotaRepository(notaValidator);
 
-//        Service service = new Service(fileRepository1, fileRepository2, fileRepository3);
-//        UI consola = new UI(service);
-//        consola.run();
+        Service service = new Service(fileRepository1, fileRepository2, fileRepository3);
+        UI consola = new UI(service);
+        consola.run();
 
         //PENTRU GUI
         // de avut un check: daca profesorul introduce sau nu saptamana la timp

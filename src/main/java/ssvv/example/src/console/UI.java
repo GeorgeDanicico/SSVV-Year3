@@ -54,13 +54,13 @@ public class UI {
 
         try {
             System.out.println("Introduceti ID-ul studentului: ");
-            Integer id = scanner.nextInt();
+            int id = Integer.parseInt(scanner.nextLine());
 
             System.out.println("Introduceti numele studentului: ");
             String nume = scanner.nextLine();
 
             System.out.println("Introduceti grupa studentului: ");
-            int grupa = scanner.nextInt();
+            int grupa = Integer.parseInt(scanner.nextLine());
 
             if (service.saveStudent(String.valueOf(id), nume, grupa) != 0) {
                 System.out.println("Student adaugat cu succes! \n");
@@ -77,13 +77,13 @@ public class UI {
 
         try {
             System.out.println("Introduceti ID-ul temei: ");
-            Integer id = scanner.nextInt();
+            Integer id = Integer.parseInt(scanner.nextLine());
 
             System.out.println("Introduceti o descriere a temei: ");
             String descriere = scanner.nextLine();
 
             System.out.println("Introduceti saptamana deadline a temei: ");
-            int deadline = scanner.nextInt();
+            int deadline = Integer.parseInt(scanner.nextLine());
 
             System.out.println("Introduceti saptamana startline a temei: ");
             int startline = scanner.nextInt();
