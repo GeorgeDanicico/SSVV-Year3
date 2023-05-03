@@ -62,7 +62,7 @@ public class UI {
             System.out.println("Introduceti grupa studentului: ");
             int grupa = Integer.parseInt(scanner.nextLine());
 
-            if (service.saveStudent(String.valueOf(id), nume, grupa) != 0) {
+            if (service.saveStudent(String.valueOf(id), nume, grupa) == 0) {
                 System.out.println("Student adaugat cu succes! \n");
             } else {
                 System.out.println("Student existent sau invalid! \n");
@@ -88,7 +88,7 @@ public class UI {
             System.out.println("Introduceti saptamana startline a temei: ");
             int startline = scanner.nextInt();
 
-            if (service.saveTema(String.valueOf(id), descriere, deadline, startline) != 0) {
+            if (service.saveTema(String.valueOf(id), descriere, deadline, startline) == 0) {
                 System.out.println("Tema adaugata cu succes! \n");
             } else {
                 System.out.println("Tema existenta sau invalida! \n");
@@ -120,10 +120,10 @@ public class UI {
             String feedback = scanner.nextLine();
 
             int result = service.saveNota(idStudent, idTema, valNota, predata, feedback);
-            if (result == 1) {
+            if (result == 0) {
                 service.createStudentFile(idStudent, idTema);
                 System.out.println("Nota adaugata cu succes! \n");
-            } else if (result == 0) {
+            } else if (result == 1) {
                 System.out.println("Nota existenta! \n");
             } else {
                 System.out.println("Student sau tema inexistenta! \n");
